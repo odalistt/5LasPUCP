@@ -1,0 +1,143 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/LOGO_APP.jpg">
+    <title>Cafetería 5LasPUCP</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <link rel="stylesheet" href="foundation-icons/foundation-icons.css" />
+    <script src="js/vendor/modernizr.js"></script>
+    
+</head>
+
+<body>
+    <div id="top"></div>
+    <div class="contain-to-grid sticky">
+        <nav class="top-bar" data-topbar>
+            <ul class="title-area">
+                <li class="name">
+                    <h1 class="text-center">
+                        <a href="#">Cafetería</a>
+                        <img src="img/NAME_APP.jpg" alt="NAME_APP">
+                    </h1>
+                </li>
+                <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+                <li class="toggle-topbar menu-icon">
+                    <a href="#">
+                        <span>Menu</span>
+                    </a>
+                </li>
+            </ul>
+            <section class="top-bar-section">
+                <!-- Right Nav Section -->
+                <ul id="nav" class="right">
+                    <li>
+                        <a href="#top">Saldo</a>
+                    </li>
+                    <li>
+                        <a href="#comida">Carta Semanal</a>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-default navbar-btn">Cerrar sesión</button>
+                    </li>
+                </ul>
+
+            </section>
+        </nav>
+    </div>
+    <section class="jumbo">
+        <div class="row">
+            <div class="large-12 columns">
+                <h1>Tu saldo actual es: S/.20 soles </h1>
+                <p class="text-center">
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="comida">
+        <div class="text-center">
+            <h2><strong>Carta Semanal</strong></h2>
+            <p>
+            <u>Menú Universitario S/. 6.50</u> 
+            </p>
+            </div>
+        <div class="row">
+              <div class="large-12 columns">
+                <div  class="btn-group-horizontal" role="group" aria-label="..." >
+                <script type="text/javascript">
+                    
+                </script>
+                <form>
+                    <button type="button" class="btn btn-default" name="bt_lunes" onclick="escribeMenuLunes()">LUNES</button>
+                    <button type="button" class="btn btn-default" name="bt_martes" onclick="escribeMenuMartes()">MARTES</button>
+                    <button type="button" class="btn btn-default" name="bt_miercoles" onclick="escribeMenuMiercoles()">MIÉRCOLES</button>
+                    <button type="button" class="btn btn-default" name="bt_jueves" onclick="escribeMenuJueves()">JUEVES</button>
+                    <button type="button" class="btn btn-default" name="bt_viernes" onclick="escribeMenuViernes()">VIERNES</button>
+                    <button type="button" class="btn btn-default" name="bt_sabado" onclick="escribeMenuSabado()">SÁBADO</button>
+                </form>
+                </div>
+                
+               <div class="jumbotron">
+                    <p id="textoMenu">Pulsa un día para visualizar el menú universitario!</p>
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1" name="text">Tu saldo actual es: </span> 
+                    <p id="saldo">-</p>
+                </div>
+</div>
+    </section>
+
+    <footer>
+        <div class="copy">
+            <div class="row">
+                <div class="large-12 columns">
+                    <div class="large-4 pull-1 columns text-center">
+                        <p>&copy; Proyecto Electrónico IEE219 .</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script type="text/javascript">
+    muestraSaldo();
+    habilitarBotonCompra();
+    muestraLunes();
+    var saldo = 5;
+        function escribeMenuLunes(){
+            document.getElementById("textoMenu").innerHTML = "<p>Entrada: Salpicon. </p><p>Plato: Estofado de carne, arveja verde, arroz.</p><p>Postre: Fruta de la estación.</p><p>Bebida: Refresco de Maracuya.</p><a href='orders.html' class='medium button' id='compra_lunes' onclick='muestraLunes()'>COMPRAR</a>";
+        }
+        function escribeMenuMartes(){
+            document.getElementById("textoMenu").innerHTML = "<p>Entrada: Ensalada oriental. </p><p>Plato: Arroz chaufa con cerdo, nabo encurtido.</p><p>Postre: Gelatina frutada.</p><p>Bebida: Limonada.</p><a href='orders.html' class='medium button' id='compra_martes' onclick=''>COMPRAR</a>";
+        }
+         function escribeMenuMiercoles(){
+            document.getElementById("textoMenu").innerHTML = "<p>Entrada: Ensalada rusa. </p><p>Plato: Milanesa de pollo, arroz, chucrut.</p><p>Postre: Flan.</p><p>Bebida: Chicha morada.</p><a href='orders.html' class='medium button' id='compra_miercoles'>COMPRAR</a>";
+        }
+         function escribeMenuJueves(){
+            document.getElementById("textoMenu").innerHTML = "<p>Entrada:Ocopa. </p><p>Plato: Pescado a la chalaca, arroz.</p><p>Postre: Fruta de la estación. </p><p>Bebida: Refresco de cebada.</p><a href='orders.html' class='medium button' id='compra_jueves'>COMPRAR</a>";
+        }
+         function escribeMenuViernes(){
+            document.getElementById("textoMenu").innerHTML = "<p>Entrada: Mixtura de legumbres. </p><p>Plato: Seco de pollo, panamito, arroz.</p><p>Postre: Carlota.</p><p>Bebida: Refresco de manzana.</p><a href='orders.html' class='medium button' id='compra_viernes'>COMPRAR</a>";
+        }
+         function escribeMenuSabado(){
+            document.getElementById("textoMenu").innerHTML = "<p>Entrada: Huevo en salsa golf. </p><p>Plato: Tallarin saltado con carne.</p><p>Postre: Delicia de fruta.</p><p>Bebida: Refresco de fruta. </p><a href='orders.html' class='medium button' id='compra_sabado' onclick='myFunction()'>COMPRAR</a>";
+        }
+        function muestraSaldo(){
+            var saldo = 20.00;
+            document.getElementById('saldo').innerHTML = saldo;
+        }
+        function muestraLunes(){
+            var lunes = "<p>Entrada: Salpicon. </p><p>Plato: Estofado de carne, arveja verde, arroz.</p><p>Postre: Fruta de la estación.</p><p>Bebida: Refresco de Maracuya.</p>"
+            document.getElementById('prueba').innerHTML = lunes;
+        }
+       
+        
+    </script>
+    
+</body>
+
+</html>
